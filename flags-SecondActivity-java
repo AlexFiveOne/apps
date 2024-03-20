@@ -1,0 +1,29 @@
+package com.example.otramierdamas;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+
+public class SecondActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_second);
+
+
+    int imagenId=getIntent().getIntExtra("ImagenId",0);
+
+    ImageView imageview2=findViewById(R.id.imageView2);
+    ImageView imageview4=findViewById(R.id.imageView4);
+
+    if(imagenId==R.drawable.catalonia){
+        imageview2.setVisibility(View.VISIBLE);
+        imageview4.setVisibility(View.GONE);
+    }else if(imagenId==R.drawable.canaida){
+       imageview2.setVisibility(View.GONE);
+        imageview4.setVisibility(View.VISIBLE);
+    }
+}}
